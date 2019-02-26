@@ -24,12 +24,6 @@
 			})
 			.then(data => callback.call(this, data));
 
-		// this._dbName = name;
-		// if (!localStorage.getItem(name)) {
-		// 	var todos = [];
-		// 	localStorage.setItem(name, JSON.stringify(todos));
-		// }
-		// callback.call(this, JSON.parse(localStorage.getItem(name)));
 	}
 
 	/**
@@ -66,15 +60,6 @@
 				return true;
 			})));
 
-		// var todos = JSON.parse(localStorage.getItem(this._dbName));
-		// callback.call(this, todos.filter(function (todo) {
-		// 	for (var q in query) {
-		// 		if (query[q] !== todo[q]) {
-		// 			return false;
-		// 		}
-		// 	}
-		// 	return true;
-		// }));
 	};
 
 	/**
@@ -94,7 +79,6 @@
 			})
 			.then(data => callback.call(this, data));
 
-		// callback.call(this, JSON.parse(localStorage.getItem(this._dbName)));
 	};
 
 	/**
@@ -136,16 +120,6 @@
 					}).then(() => callback.call(this, [data]));
 				});
 
-			// for (var i = 0; i < todos.length; i++) {
-			// 	if (todos[i].id === id) {
-			// 		for (var key in updateData) {
-			// 			todos[i][key] = updateData[key];
-			// 		}
-			// 		break;
-			// 	}
-			// }
-			// localStorage.setItem(this._dbName, JSON.stringify(todos));
-			// callback.call(this, todos);
 
 		} else {
 			// Generate an ID
@@ -160,9 +134,6 @@
 				body: JSON.stringify(updateData)
 			}).then(() => callback.call(this, [updateData]));
 
-			// todos.push(updateData);
-			// localStorage.setItem(this._dbName, JSON.stringify(todos));
-			// callback.call(this, [updateData]);
 		}
 	};
 
@@ -189,15 +160,6 @@
 			})
 			.then(data => callback.call(this, data));
 
-		// var todos = JSON.parse(localStorage.getItem(this._dbName));
-		// for (var i = 0; i < todos.length; i++) {
-		// 	if (todos[i].id == id) {
-		// 		todos.splice(i, 1);
-		// 		break;
-		// 	}
-		// }
-		// localStorage.setItem(this._dbName, JSON.stringify(todos));
-		// callback.call(this, todos);
 	};
 
 	/**
@@ -215,9 +177,6 @@
 		});
 		callback.call(this, []);
 
-		// var todos = [];
-		// localStorage.setItem(this._dbName, JSON.stringify(todos));
-		// callback.call(this, todos);
 	};
 
 	// Export to window
