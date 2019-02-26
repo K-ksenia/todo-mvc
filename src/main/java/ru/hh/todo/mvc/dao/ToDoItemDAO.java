@@ -7,13 +7,13 @@ public interface ToDoItemDAO {
 
     List<ToDoItem> getAllItems();
 
-    ToDoItem getItemById(int id);
+    ToDoItem getItemById(long id);
 
     void insertItem(ToDoItem item);
 
-    boolean updateItem(int id, ToDoItem item);
+    boolean updateItem(long id, ToDoItem item);
 
-    boolean deleteItem(int id);
+    boolean deleteItem(long id);
 
     void deleteAllItems();
 

@@ -28,7 +28,7 @@ public class ToDoService {
                 .map(ToDoItemDTO::new).collect(Collectors.toList());
     }
 
-    public ToDoItemDTO getItemById(int id) {
+    public ToDoItemDTO getItemById(long id) {
         return new ToDoItemDTO(daoFactory.getToDoItemDAO().getItemById(id));
     }
 
@@ -36,11 +36,11 @@ public class ToDoService {
         daoFactory.getToDoItemDAO().insertItem(item);
     }
 
-    public boolean updateItem(int id, ToDoItem item) {
+    public boolean updateItem(long id, ToDoItem item) {
         return daoFactory.getToDoItemDAO().updateItem(id, item);
     }
 
-    public boolean deleteItem(int id) {
+    public boolean deleteItem(long id) {
         return daoFactory.getToDoItemDAO().deleteItem(id);
     }
 

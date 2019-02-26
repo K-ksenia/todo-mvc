@@ -9,13 +9,13 @@ import java.util.Map;
 
 public class ToDoItemDAOImpl implements ToDoItemDAO {
 
-    private static Map<Integer, ToDoItem> toDoItemMap = new HashMap<>();
+    private static Map<Long, ToDoItem> toDoItemMap = new HashMap<>();
 
     public List<ToDoItem> getAllItems() {
         return new ArrayList<ToDoItem>(toDoItemMap.values());
     }
 
-    public ToDoItem getItemById(int id) {
+    public ToDoItem getItemById(long id) {
         return toDoItemMap.get(id);
     }
 
@@ -23,11 +23,11 @@ public class ToDoItemDAOImpl implements ToDoItemDAO {
         toDoItemMap.put(item.getId(), item);
     }
 
-    public boolean updateItem(int id, ToDoItem item) {
+    public boolean updateItem(long id, ToDoItem item) {
         return toDoItemMap.replace(id, item) != null;
     }
 
-    public boolean deleteItem(int id) {
+    public boolean deleteItem(long id) {
         return toDoItemMap.remove(id) != null;
     }
 

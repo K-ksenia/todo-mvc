@@ -2,7 +2,7 @@ package ru.hh.todo.mvc.model;
 
 public class ToDoItem {
 
-    private int id;
+    private long id;
 
     private String content;
 
@@ -10,18 +10,18 @@ public class ToDoItem {
 
     public ToDoItem() {}
 
-    public ToDoItem(int id, String content) {
+    public ToDoItem(long id, String content) {
         this.id = id;
         this.content = content;
     }
 
     public ToDoItem(ToDoItemDTO itemDTO) {
         this.id = itemDTO.getId();
-        this.content = itemDTO.getContent();
+        this.content = itemDTO.getTitle();
         this.completed = itemDTO.isCompleted();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -33,7 +33,7 @@ public class ToDoItem {
         return completed;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

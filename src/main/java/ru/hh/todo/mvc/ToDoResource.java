@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 
 import java.util.List;
 
-@Path("/")
+@Path("/todo")
 @Produces(MediaType.APPLICATION_JSON)
 public class ToDoResource {
 
@@ -51,7 +51,7 @@ public class ToDoResource {
 
     @GET
     @Path("/{id}")
-    public ToDoItemDTO getItemById(int id) {
+    public ToDoItemDTO getItemById(@PathParam("id") long id) {
         return toDoService.getItemById(id);
     }
 
@@ -64,14 +64,14 @@ public class ToDoResource {
 
     @PUT
     @Path("/{id}")
-    public Response updateItem(@PathParam("id") int id, ToDoItemDTO item) {
+    public Response updateItem(@PathParam("id") long id, ToDoItemDTO item) {
         toDoService.updateItem(id, new ToDoItem(item));
         return Response.status(Response.Status.OK).build();
     }
 
     @DELETE
     @Path("/{id}")
-    public Response deleteItem(@PathParam("id") int id) {
+    public Response deleteItem(@PathParam("id") long id) {
         toDoService.deleteItem(id);
         return Response.status(Response.Status.OK).build();
     }
